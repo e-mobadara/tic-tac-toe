@@ -27,4 +27,6 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     //E-mobadara
     implementation 'com.github.e-mobadara:2d-game-lib:v1.2.0'
+    //Toasty for the Toasts with steroids :)
+    implementation 'com.github.GrenderG:Toasty:1.4.1'
 }
