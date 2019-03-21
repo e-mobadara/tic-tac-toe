@@ -48,6 +48,9 @@ public class Square extends Sprite {
                 }
                 //Change the turns
                 board.changePlayer();
+
+                //To notify me as soon as the game ends!
+                fillSquare(board);
             }
         } //The game has ended Let's check the results
         //No One won
