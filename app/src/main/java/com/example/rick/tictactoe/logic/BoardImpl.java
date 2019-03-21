@@ -93,7 +93,6 @@ public class BoardImpl implements Board{
             currentPlayerMark = 'x';
     }
 
-    //This is the version of the console game
     @Override
     public boolean placeMark(int row, int col) {
         //checking that the row and col are not out of the boundaries of the box

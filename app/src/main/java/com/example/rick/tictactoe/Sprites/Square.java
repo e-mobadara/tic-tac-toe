@@ -5,9 +5,9 @@ import android.util.Log;
 import com.example.emobadaragaminglib.Base.Game;
 import com.example.emobadaragaminglib.Base.Image;
 import com.example.emobadaragaminglib.Components.Sprite;
+import com.example.rick.tictactoe.Assets.Again;
 import com.example.rick.tictactoe.Assets.MyX_O;
 import com.example.rick.tictactoe.logic.BoardImpl;
-import com.example.rick.tictactoe.state.GameActivity;
 
 public class Square extends Sprite {
     private static final String TAG = "Square";
@@ -23,7 +23,7 @@ public class Square extends Sprite {
     }
     /*
     * Notice that we defined square in the Screen as
-    * ph[i][j] = new Square(game,PlaceHolderAssets.square,i*w_unit,j*h_unit,h_unit,w_unit);
+    * ph[i][j] = new Square(game,SquareAssets.square,i*w_unit,j*h_unit,h_unit,w_unit);
     * so to get the iterators i and j back, and use them in the logic of the game
     * notice that i = this.x / this.width because
     * this.x = i*w_unit and this.width = w_unit
@@ -52,13 +52,17 @@ public class Square extends Sprite {
         } //The game has ended Let's check the results
         //No One won
         else if (!board.checkForWin() && board.isBoardFull()) {
-            //Toasty.info(,"The Game was a Tie");
             Log.i(TAG, "fillSquare: Game is TIE");
+            g.getCurrentScreen().
+                    addSprite(new AgainButton(g,Again.image,g.getScreenWidth()/2-this.getWidth(),g.getScreenHeight()/2-this.getWidth(),this.getHeight(),this.getHeight()));
+
 
         } //Someone won!
         else if (board.checkForWin()) {
-            //toast("the player" + game.getCurrentPlayerMark() + " Loooses!");
             Log.i(TAG, "fillSquare: SomeoneWon!");
+            g.getCurrentScreen().
+                    addSprite(new AgainButton(g,Again.image,g.getScreenWidth()/2-this.getWidth(),g.getScreenHeight()/2-this.getWidth(),this.getHeight(),this.getHeight()));
+
         }
         return true;
     }
