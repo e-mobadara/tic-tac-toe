@@ -15,7 +15,7 @@ public class Square extends Sprite {
     private int j; // place in the matrix
     Game g; //for drawing purposes
     public Square(Game game, Image image, int x, int y, int height, int width) {
-        super(game, image, x, y, height, width);
+        super(image, x, y, height, width);
         //Look explanation of the below code right under
         this.i = this.getX()/this.getWidth();
         this.j = this.getY()/this.getHeight();
@@ -38,12 +38,12 @@ public class Square extends Sprite {
                 //if it is X turn
                 if (board.getCurrentPlayerMark() == 'x') {
                     g.getCurrentScreen().
-                            addSprite(new Sprite(g,MyX_O.__x,this.getX(),this.getY(),this.getWidth(),this.getWidth()));
+                            addSprite(new Sprite(MyX_O.__x,this.getX(),this.getY(),this.getWidth(),this.getWidth()));
                     Log.i(TAG, "fillSquare: Draw X");
                 }//It is O turn
                 else if (board.getCurrentPlayerMark() == 'o') {
                     g.getCurrentScreen().
-                            addSprite(new Sprite(g,MyX_O.__o,this.getX(),this.getY(),this.getWidth(),this.getWidth()));
+                            addSprite(new Sprite(MyX_O.__o,this.getX(),this.getY(),this.getWidth(),this.getWidth()));
                     Log.i(TAG, "fillSquare: Draw O");
                 }
                 //Change the turns

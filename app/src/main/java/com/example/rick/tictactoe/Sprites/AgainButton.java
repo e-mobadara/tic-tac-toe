@@ -8,7 +8,7 @@ import com.example.rick.tictactoe.Views.GameScreen;
 public class AgainButton extends Sprite {
     Game g;
     public AgainButton(Game game, Image image, int x, int y, int height, int width) {
-        super(game, image, x, y, height, width);
+        super(image, x, y, height, width);
         this.g = game;
     }
     public void resetGame(){
